@@ -1,0 +1,446 @@
+/* ----------------------------
+   RESET & GLOBAL SETTINGS
+---------------------------- */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 20px;
+  font-size: 15px;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; /* Smooth scrolling when clicking anchor links */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------------------------
+   LAYOUT WRAPPERS
+---------------------------- */
+.layar-dalam {
+  width: 1000px;
+  margin: auto; /* Center align */
+}
+
+.layar-penuh {
+  width: 100%;
+}
+
+/* ----------------------------
+   NAVIGATION STYLES
+---------------------------- */
+nav {
+  z-index: 100;
+  color: #fff;
+  text-align: center;
+  position: fixed; /* Fix nav to top */
+  width: 100%;
+  line-height: 60px;
+  border-bottom: 1px solid #b1b1b1;
+  transition: background-color 0.5s ease;
+}
+
+nav.putih {
+  background-color: #fff;
+}
+
+nav .logo {
+  float: left;
+  position: relative;
+  line-height: 55px;
+  text-align: center;
+}
+
+nav .logo img {
+  vertical-align: middle;
+  width: 120px;
+}
+
+nav .menu {
+  float: right;
+  height: 60px;
+  max-width: 600px;
+}
+
+nav .menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav .menu ul li {
+  line-height: 60px;
+}
+
+nav ul li a {
+  color: #fff;
+  padding: 0 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav.putih .tombol-menu .garis,
+nav.putih ul li a {
+  color: #333;
+}
+
+nav .logo img.hitam {
+  display: none; /* Placeholder for dark mode logo */
+}
+
+/* ----------------------------
+   HEADER (VIDEO BACKGROUND)
+---------------------------- */
+header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 2;
+}
+
+header video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+header .intro {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+}
+
+header .intro h3 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.tombol {
+  background-color: #c86b85;
+  color: #fff;
+  padding: 0 20px;
+  line-height: 42px;
+  font-size: 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  height: 40px;
+}
+
+.tombol-menu {
+  position: absolute;
+  top: 1.7rem;
+  right: 1rem;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tombol-menu .garis {
+  height: 3px;
+  background-color: #fff;
+}
+
+/* ----------------------------
+   SECTIONS
+---------------------------- */
+section {
+  padding: 50px 0;
+}
+
+section h3 {
+  font-size: 30px;
+  text-align: center;
+}
+
+section h3::after {
+  content: "";
+  display: block;
+  margin: 20px auto;
+  width: 52px;
+  border-bottom: 5px solid #c86b85;
+}
+
+#aboutus,
+#team,
+#blog {
+  text-align: center;
+}
+
+section p.ringkasan {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
+
+section .konten-isi p {
+  font-style: normal;
+}
+
+section.abuabu {
+  background-color: #f5f6f6;
+}
+
+/* ----------------------------
+   CONTENT BLOCKS
+---------------------------- */
+.support,
+.tim,
+.blog {
+  display: flex;
+  justify-content: space-around;
+}
+
+.support div,
+.tim div {
+  width: 26%;
+  text-align: center;
+}
+
+.support h6,
+.tim h6 {
+  margin: 20px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.support img {
+  width: 50px;
+}
+
+/* ----------------------------
+   GALLERY SECTION
+---------------------------- */
+section#gallery {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+section#gallery div {
+  padding: 10px;
+}
+
+section#gallery div img {
+  height: 100px;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+section#gallery div img:hover {
+  transform: scale(1.1);
+}
+
+/* ----------------------------
+   QUOTE SECTION
+---------------------------- */
+section.quote {
+  background: url("asset/backgroundkingsmith.png") no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  font-size: 120px;
+  font-style: italic;
+  padding: 100px;
+}
+
+section.quote .layar-dalam p {
+  display: inline;
+  background: url("asset/quote-icon.png") no-repeat;
+  padding: 40px;
+}
+
+/* ----------------------------
+   BLOG SECTION
+---------------------------- */
+.tim img,
+.blog .area {
+  border-radius: 5px;
+  box-shadow: 0 -10px 30px #ccc;
+}
+
+.blog .area {
+  width: 47%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog div.area div {
+  width: 50%;
+}
+
+.blog .area .gambar {
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px 0 0 5px;
+}
+
+.blog .area .text article {
+  padding: 40px;
+}
+
+.blog .area .text article h4 {
+  margin: 0;
+}
+
+.blog .area .text article a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+.blog .area .text article a:hover {
+  color: #ccc;
+}
+
+/* ----------------------------
+   FOOTER SECTION
+---------------------------- */
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 50px 0;
+}
+
+footer .layar-dalam {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .layar-dalam div {
+  width: 20%;
+}
+
+footer .layar-dalam h5 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer .layar-dalam .copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #666;
+}
+
+/* ----------------------------
+   RESPONSIVE MEDIA QUERY
+---------------------------- */
+@media screen and (max-width: 991.98px) {
+  .layar-dalam {
+    width: 90%;
+  }
+
+  nav .menu ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  nav .menu ul li {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    line-height: 40px;
+  }
+
+  nav .menu ul li a {
+    color: #333;
+  }
+
+  .tombol-menu {
+    display: flex;
+  }
+
+  .blog .area {
+    display: block;
+  }
+
+  .blog div.area div,
+  .support div {
+    width: 100%;
+  }
+
+  .blog .area .gambar {
+    height: 200px;
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+/* ----------------------------
+   FORM STATUS SECTION
+---------------------------- */
+.form-status {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.form-status input[type="text"] {
+  padding: 12px 16px;
+  width: 280px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-status input[type="text"]:focus {
+  border-color: #f5c542;
+  outline: none;
+}
+
+.form-status button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f5c542;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-status button:hover {
+  background-color: #e0b832;
+}

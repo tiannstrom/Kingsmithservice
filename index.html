@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Bagian HEAD -->
+<head>
+  <meta charset="UTF-8" /> <!-- Menentukan encoding karakter -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Kompatibilitas dengan IE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsif di perangkat mobile -->
+  <title>Service Kingsmith</title> <!-- Judul halaman -->
+
+  <!-- Menghubungkan CSS eksternal -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Styling tambahan langsung di HTML -->
+  <style>
+    nav {
+      background-color: #585858;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f5c542;
+    }
+
+    .logo img {
+      vertical-align: middle;
+    }
+
+    .tombol-menu {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu ul {
+        display: none;
+        flex-direction: column;
+      }
+
+      .tombol-menu {
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    /* Styling form SN */
+    .form-status {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .form-status input[type="text"] {
+      padding: 12px 16px;
+      width: 280px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .form-status input[type="text"]:focus {
+      border-color: #f5c542;
+      outline: none;
+    }
+
+    .form-status button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #f5c542;
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form-status button:hover {
+      background-color: #e0b832;
+    }
+  </style>
+</head>
+
+<!-- Bagian BODY -->
+<body>
+  <!-- Navigasi utama -->
+  <nav>
+    <div class="layar-dalam" style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="logo">
+        <img src="asset/Kingsmithlogo.png" class="white" style="width: 100px;" />
+      </div>
+      <div class="menu">
+        <a href="#" class="tombol-menu">
+          <span class="garis"></span>
+          <span class="garis"></span>
+          <span class="garis"></span>
+        </a>
+        <ul>
+          <li><a href="#HOME">Home</a></li>
+          <li><a href="#ABOUTUS">About Us</a></li>
+          <li><a href="#CONTACT">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Kontainer utama -->
+  <div class="layar-penuh">
+
+    <!-- Bagian header/video -->
+    <header id="HOME">
+      <div class="overlay"></div>
+      <video autoplay muted loop>
+        <source src="asset/kingsmithtest.mp4" type="video/mp4" />
+      </video>
+      <div class="intro">
+        <h3>SERVICE CHECK</h3>
+        <p>Masukan Nomor SN Unit Anda Untuk Mengecek Status Perbaikan</p>
+        <form action="update.html" method="GET" class="form-status">
+          <input type="text" name="sn" placeholder="Masukkan Nomor SN Anda" required />
+          <button type="submit">Cek Status</button>
+        </form>
+      </div>
+    </header>
+
+    <!-- Bagian utama konten -->
+    <main>
+      <section id="ABOUTUS">
+        <div class="layar-dalam">
+          <h3>About Us</h3>
+          <p class="ringkasan">
+            Kingsmith Store adalah pusat layanan terpercaya untuk perbaikan dan perawatan unit treadmill Anda.
+          </p>
+          <div class="konten-isi">
+            <p>
+              Kami berkomitmen memberikan solusi cepat, profesional, dan berkualitas tinggi untuk memastikan treadmill Anda kembali berfungsi optimal. Didukung oleh teknisi berpengalaman, kami melayani berbagai merek dan kerusakan dengan pelayanan ramah dan harga terjangkau.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quote tambahan -->
+      <section class="quote">
+        <div class="layar-dalam">
+          <p>Service Kingsmith nomor 1 terpercaya di Indonesia.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bagian footer / kontak -->
+    <footer id="CONTACT">
+      <div class="layar-dalam footer-grid">
+        <div class="footer-col">
+          <h5>INFO</h5>
+          <p>
+            Kingsmith Store adalah pusat layanan resmi untuk perawatan dan perbaikan treadmill merek Kingsmith yang berlokasi di Sunter, Jakarta Utara.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>CONTACT</h5>
+          <p>
+            📞 0812-4566-587<br />
+            📞 0811-2554-781<br />
+            📧 kingsmith@gmail.com
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>HELP</h5>
+          <p>
+            Jika Anda mengalami masalah dengan treadmill seperti mesin tidak menyala atau sabuk tersendat, tim teknisi kami siap membantu.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>LOKASI</h5>
+          <p>
+            Ruko Puri Mutiara Blok A No. 76–77<br />
+            Jl. Griya Utama No. 77, Lantai 2, Sunter Agung, Jakarta Utara
+          </p>
+        </div>
+      </div>
+      <div class="layar-dalam">
+        <div class="copyright">
+          &copy; Service Kingsmith Indonesia
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Script eksternal -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="javascript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Status Perbaikan - Kingsmith</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #a5b4fc;
+      --background: #f3f4f6;
+      --glass: rgba(255, 255, 255, 0.3);
+      --blur: blur(15px);
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #d8e3ff, #e0f7fa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: var(--glass);
+      backdrop-filter: var(--blur);
+      border-radius: 16px;
+      padding: 40px 30px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 8px 30px var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #111827;
+      font-size: 1.8rem;
+    }
+
+    .status-box {
+      background: white;
+      border-left: 6px solid var(--primary);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      animation: fadeIn 0.6s ease;
+    }
+
+    .status-item {
+      margin-bottom: 14px;
+      font-size: 15.5px;
+      color: #374151;
+    }
+
+    .status-item span {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: color 0.3s ease;
+      width: 100%;
+    }
+
+    .back-link:hover {
+      color: #1e3a8a;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsif */
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🔧 Status Perbaikan Unit Anda</h2>
+    <div class="status-box">
+      <div class="status-item">📄 Nomor SN: <span id="sn">Memuat...</span></div>
+      <div class="status-item">📦 Unit: <span id="unit">Memuat...</span></div>
+      <div class="status-item">🛡️ Status Garansi: <span id="garansi">Memuat...</span></div>
+      <div class="status-item">🔄 Status Perbaikan: <span id="statusText">Memuat...</span></div>
+      <div class="status-item">💸 Biaya Perbaikan: <span id="biaya">Memuat...</span></div>
+    </div>
+    <a class="back-link" href="index.html">← Kembali ke Halaman Utama</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const sn = params.get("sn");
+    document.getElementById("sn").textContent = sn || "Tidak tersedia";
+
+    const fakeDatabase = {
+      "SN123456": {
+        unit: "Kingsmith R1 Pro",
+        garansi: "Ya",
+        status: "✅ Unit sedang dalam proses perbaikan. Estimasi selesai 27 Mei 2025.",
+        biaya: "Gratis (dalam garansi)"
+      },
+      "SN789101": {
+        unit: "Kingsmith WalkingPad A1",
+        garansi: "Tidak",
+        status: "✅ Perbaikan selesai. Unit siap diambil.",
+        biaya: "Rp350.000 (pergantian kabel motor dan servis)"
+      },
+      "SN555888": {
+        unit: "Kingsmith X21",
+        garansi: "Tidak",
+        status: "⚠️ Menunggu suku cadang dari pusat. Estimasi 3 hari kerja.",
+        biaya: "Rp750.000 (LCD Panel rusak)"
+      }
+    };
+
+    const data = fakeDatabase[sn];
+    if (data) {
+      document.getElementById("unit").textContent = data.unit;
+      document.getElementById("garansi").textContent = data.garansi;
+      document.getElementById("statusText").textContent = data.status;
+      document.getElementById("biaya").textContent = data.biaya;
+    } else {
+      document.getElementById("unit").textContent = "-";
+      document.getElementById("garansi").textContent = "-";
+      document.getElementById("statusText").textContent = "❌ Nomor SN tidak ditemukan.";
+      document.getElementById("biaya").textContent = "-";
+    }
+  </script>
+</body>
+</html>
